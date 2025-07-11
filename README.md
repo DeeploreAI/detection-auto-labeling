@@ -19,8 +19,8 @@ pip install -e .
 ## Quick Start
 
 ```python
-from marine_auto_labeling import configure_llm_client, gemini_inference, openrouter_inference
-from marine_auto_labeling import encode_image_to_pil, encode_image_to_base64, save_yolo_annotation
+from llm_auto_labeling import configure_llm_client, gemini_inference, openrouter_inference
+from llm_auto_labeling import encode_image_to_pil, encode_image_to_base64, save_yolo_annotation
 
 # Configure API client
 api_key = "your_api_key_here"
@@ -50,7 +50,7 @@ save_yolo_annotation(
     image_path=image_path,
     bbox_xyxy=[x1, y1, x2, y2],
     genus="amphiprion",
-    species="percula", 
+    species="percula",
     name="orange clownfish",
     output_dir="./annotations"
 )
@@ -92,7 +92,7 @@ output_dir/
 ## Creating YOLO Training Configuration
 
 ```python
-from marine_auto_labeling import create_yolo_config
+from llm_auto_labeling import create_yolo_config
 
 # Generate YOLO configuration file
 create_yolo_config(dataset_dir="./annotations", config_name="marine_animals.yaml")
